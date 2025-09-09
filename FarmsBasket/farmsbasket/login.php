@@ -1,5 +1,5 @@
 <?php
-// login.php — Basic login page for Farm’sBasket
+//manage login if else keep only customer and manage password checking 
 
 session_start();
 
@@ -33,7 +33,7 @@ if ($row = $res->fetch_assoc()) {
     $_SESSION['email'] = $row['email'];
     $_SESSION['role'] = $row['role']; // important
 
-    // redirect based on role
+
     if ($row['role'] === 'admin') {
         header("Location: admin/dashboard.php");
     } elseif ($row['role'] === 'supplier') {
